@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paisaje Impresionista</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+</head>
+<body>
+  <script src="sketch.js"></script>
+</body>
+</html>
+
+// Configuración inicial
+function setup() {
+  createCanvas(800, 600); // Tamaño del lienzo
+  background(200, 220, 255); // Fondo azul claro (cielo)
+  noStroke(); // Sin bordes para pinceladas
+}
+
+// Dibujo de pinceladas al mover el mouse
+function draw() {
+  if (mouseIsPressed) {
+    // Selección de colores aleatorios similares al estilo impresionista
+    let colors = [
+      color(239, 208, 146), // Amarillo pálido
+      color(250, 128, 114), // Coral
+      color(144, 238, 144), // Verde claro
+      color(135, 206, 235), // Azul cielo
+      color(255, 182, 193)  // Rosa claro
+    ];
+
+    // Elección aleatoria de color y posición
+    fill(random(colors));
+    ellipse(mouseX, mouseY, random(10, 30), random(5, 15)); // Pincelada elíptica
+  }
+}
